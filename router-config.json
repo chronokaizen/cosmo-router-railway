@@ -64,14 +64,8 @@
           "method": "POST",
           "body": {},
           "baseUrl": {},
-          "path": {},
-          "headers": [
-            {
-              "propagate": {
-                "matching": "apikey"
-              }
-            }
-          ]
+          "path": {}
+          
         },
         "subscription": {
           "enabled": true,

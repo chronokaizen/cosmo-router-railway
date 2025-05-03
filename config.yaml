@@ -5,4 +5,4 @@ playground_enabled: true
 playground_path: "/"
 introspection_enabled: true
 json_log: true
-#router_config_path: "/app/router-config.json"
+router_config_path: "/app/router-config.json"
