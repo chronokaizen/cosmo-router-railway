@@ -1,9 +1,8 @@
 version: "1"
-
 log_level: "debug"
 listen_addr: "0.0.0.0:3002"
 playground_enabled: true
 playground_path: "/"
 introspection_enabled: true
 json_log: true
-router_config_path: "/app/router-config.json"
+#router_config_path: "/app/router-config.json"
