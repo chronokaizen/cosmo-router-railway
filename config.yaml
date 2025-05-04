@@ -27,3 +27,15 @@ headers:
     request:
       - op: "propagate"
         named: "apikey"
+
+cors:
+  allow_any_origin: false
+  allowed_origins:
+    - "https://cosmo.wundergraph.com"
+  allowed_headers:
+    - "apikey"
+    - "X-WG-TRACE"
+  allowed_methods:
+    - "POST"
+    - "OPTIONS"
+  allow_credentials: false
