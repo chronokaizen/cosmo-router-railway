@@ -1,8 +1,84 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/wundergraph/cosmo/router/main/router/pkg/config/config.schema.json
+
+# Cosmo Router full configuration example
+# See https://cosmo-docs.wundergraph.com/router/configuration for details
+
 version: "1"
-log_level: "debug"
+
+# Instance and graph settings
+instance_id: "my-router-instance"
+graph:
+  token: "${GRAPH_API_TOKEN}" # Set via env var or secret
+  #sign_key: "<32-byte-sign-key>"
+
+# General router options
+dev_mode: true
+log_level: "info"
 listen_addr: "0.0.0.0:3002"
 playground_enabled: true
 playground_path: "/"
 introspection_enabled: true
 json_log: true
+shutdown_delay: 15s
+grace_period: 15s
+poll_interval: 10s
+health_check_path: "/health"
+readiness_check_path: "/health/ready"
+liveness_check_path: "/health/live"
 router_config_path: "/app/router-config.json"
+
+# Header manipulation
+headers:
+  all:
+    request:
+      - op: "propagate"
+        named: "Authorization"
+      - op: "propagate"
+        named: "apikey"
+
+# Subgraphs definition
+
+# Subgraph error propagation
+subgraph_error_propagation:
+  enabled: true
+  propagate_status_codes: true
+  mode: "pass-through"
+  omit_locations: false
+
+# Authentication providers (example: Keycloak, OIDC, etc)
+
+# Telemetry, tracing, and metrics
+telemetry:
+  service_name: "cosmo-router"
+  tracing:
+    enabled: false
+    #exporters:
+    #  - endpoint: https://cosmo-otel.wundergraph.com
+    #    exporter: "http"
+    #    headers: {Authorization: Bearer ${ROUTER_TOKEN}}
+  metrics:
+    otlp:
+      enabled: false
+      #exporters:
+      #  - endpoint: https://cosmo-otel.wundergraph.com
+      #    exporter: "http"
+      #    headers: {Authorization: Bearer ${ROUTER_TOKEN}}
+
+# Storage providers (optional, for persisted operations, etc)
+#storage_providers:
+#  cdn:
+#    - id: "default"
+#      url: "https://cosmo-cdn.wundergraph.com"
+#      #token: "${CDN_TOKEN}"
+
+# Advanced logging (optional)
+#logging:
+#  format: "json"
+#  level: "info"
+#  fields:
+#    - name: "request_id"
+#      context_field: "operation_hash"
+#    - name: "user_id"
+#      request_header: "X-User-Id"
+
+# See docs for more advanced options: persisted operations, rate limiting, CORS, etc.

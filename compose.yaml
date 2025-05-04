@@ -1,0 +1,12 @@
+federation_version: 2
+subgraphs:
+  - name: daas
+    routing_url: https://oesozgyijixtyoattkmc.supabase.co/graphql/v1
+    headers:
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9lc296Z3lpaml4dHlvYXR0a21jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MzUyNzUsImV4cCI6MjA2MTAxMTI3NX0.AhmZzmkIVZ9I28LC-JnszPa5Bw5mF03DSkFX89YJfZE"
+      Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9lc296Z3lpaml4dHlvYXR0a21jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MzUyNzUsImV4cCI6MjA2MTAxMTI3NX0.AhmZzmkIVZ9I28LC-JnszPa5Bw5mF03DSkFX89YJfZE"
+    propagate:
+      - (?i)^apikey$
+    timeout: 10s
+    schema:
+      file: ./toostat.graphql
