@@ -1,11 +1,6 @@
-schema {
-  query: Query
-  mutation: Mutation
-}
-
-directive @tag(name: String!) repeatable on ARGUMENT_DEFINITION | ENUM | ENUM_VALUE | FIELD_DEFINITION | INPUT_FIELD_DEFINITION | INPUT_OBJECT | INTERFACE | OBJECT | SCALAR | UNION
-
-"""A high precision floating point value represented as a string"""
+"""
+A high precision floating point value represented as a string
+"""
 scalar BigFloat
 
 """
@@ -33,7 +28,9 @@ input BigFloatListFilter {
   overlaps: [BigFloat!]
 }
 
-"""An arbitrary size integer represented as a string"""
+"""
+An arbitrary size integer represented as a string
+"""
 scalar BigInt
 
 """
@@ -85,7 +82,9 @@ An opaque string using for tracking a position in results during pagination
 """
 scalar Cursor
 
-"""A date without time information"""
+"""
+A date without time information
+"""
 scalar Date
 
 """
@@ -113,7 +112,9 @@ input DateListFilter {
   overlaps: [Date!]
 }
 
-"""A date and time"""
+"""
+A date and time
+"""
 scalar Datetime
 
 """
@@ -147,9 +148,14 @@ type extraction_learning_datasetConnection {
 }
 
 type extraction_learning_datasetDeleteResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [extraction_learning_dataset!]!
 }
 
@@ -166,15 +172,20 @@ input extraction_learning_datasetFilter {
   created_at: DatetimeFilter
   source: StringFilter
   nodeId: IDFilter
+
   """
   Returns true only if all its inner filters are true, otherwise returns false
   """
   and: [extraction_learning_datasetFilter!]
+
   """
   Returns true if at least one of its inner filters is true, otherwise returns false
   """
   or: [extraction_learning_datasetFilter!]
-  """Negates a filter"""
+
+  """
+  Negates a filter
+  """
   not: extraction_learning_datasetFilter
 }
 
@@ -190,9 +201,14 @@ input extraction_learning_datasetInsertInput {
 }
 
 type extraction_learning_datasetInsertResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [extraction_learning_dataset!]!
 }
 
@@ -217,9 +233,14 @@ input extraction_learning_datasetUpdateInput {
 }
 
 type extraction_learning_datasetUpdateResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [extraction_learning_dataset!]!
 }
 
@@ -266,9 +287,14 @@ type indicator_graphicsConnection {
 }
 
 type indicator_graphicsDeleteResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [indicator_graphics!]!
 }
 
@@ -283,15 +309,20 @@ input indicator_graphicsFilter {
   created_at: DatetimeFilter
   indicator_instance_id: UUIDFilter
   nodeId: IDFilter
+
   """
   Returns true only if all its inner filters are true, otherwise returns false
   """
   and: [indicator_graphicsFilter!]
+
   """
   Returns true if at least one of its inner filters is true, otherwise returns false
   """
   or: [indicator_graphicsFilter!]
-  """Negates a filter"""
+
+  """
+  Negates a filter
+  """
   not: indicator_graphicsFilter
 }
 
@@ -305,9 +336,14 @@ input indicator_graphicsInsertInput {
 }
 
 type indicator_graphicsInsertResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [indicator_graphics!]!
 }
 
@@ -328,9 +364,14 @@ input indicator_graphicsUpdateInput {
 }
 
 type indicator_graphicsUpdateResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [indicator_graphics!]!
 }
 
@@ -340,9 +381,14 @@ type indicator_instancesConnection {
 }
 
 type indicator_instancesDeleteResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [indicator_instances!]!
 }
 
@@ -357,15 +403,20 @@ input indicator_instancesFilter {
   name: StringFilter
   created_at: DatetimeFilter
   nodeId: IDFilter
+
   """
   Returns true only if all its inner filters are true, otherwise returns false
   """
   and: [indicator_instancesFilter!]
+
   """
   Returns true if at least one of its inner filters is true, otherwise returns false
   """
   or: [indicator_instancesFilter!]
-  """Negates a filter"""
+
+  """
+  Negates a filter
+  """
   not: indicator_instancesFilter
 }
 
@@ -379,9 +430,14 @@ input indicator_instancesInsertInput {
 }
 
 type indicator_instancesInsertResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [indicator_instances!]!
 }
 
@@ -402,9 +458,14 @@ input indicator_instancesUpdateInput {
 }
 
 type indicator_instancesUpdateResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [indicator_instances!]!
 }
 
@@ -414,9 +475,14 @@ type indicatorsConnection {
 }
 
 type indicatorsDeleteResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [indicators!]!
 }
 
@@ -432,15 +498,20 @@ input indicatorsFilter {
   enabled: BooleanFilter
   created_at: DatetimeFilter
   nodeId: IDFilter
+
   """
   Returns true only if all its inner filters are true, otherwise returns false
   """
   and: [indicatorsFilter!]
+
   """
   Returns true if at least one of its inner filters is true, otherwise returns false
   """
   or: [indicatorsFilter!]
-  """Negates a filter"""
+
+  """
+  Negates a filter
+  """
   not: indicatorsFilter
 }
 
@@ -454,9 +525,14 @@ input indicatorsInsertInput {
 }
 
 type indicatorsInsertResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [indicators!]!
 }
 
@@ -478,9 +554,14 @@ input indicatorsUpdateInput {
 }
 
 type indicatorsUpdateResponse {
-  """Count of the records impacted by the mutation"""
+  """
+  Count of the records impacted by the mutation
+  """
   affectedCount: Int!
-  """Array of records impacted by the mutation"""
+
+  """
+  Array of records impacted by the mutation
+  """
   records: [indicators!]!
 }
 
@@ -509,59 +590,103 @@ input IntListFilter {
   overlaps: [Int!]
 }
 
-"""A Javascript Object Notation value serialized as a string"""
+"""
+A Javascript Object Notation value serialized as a string
+"""
 scalar JSON
 
-"""The root type for creating and mutating data"""
+"""
+The root type for creating and mutating data
+"""
 type Mutation {
   """
   Deletes zero or more records from the `extraction_learning_dataset` collection
   """
   deleteFromextraction_learning_datasetCollection(
-    """Restricts the mutation's impact to records matching the criteria"""
+    """
+    Restricts the mutation's impact to records matching the criteria
+    """
     filter: extraction_learning_datasetFilter
+
     """
     The maximum number of records in the collection permitted to be affected
     """
     atMost: Int! = 1
   ): extraction_learning_datasetDeleteResponse!
-  """Deletes zero or more records from the `indicator_graphics` collection"""
+
+  """
+  Deletes zero or more records from the `indicator_graphics` collection
+  """
   deleteFromindicator_graphicsCollection(
-    """Restricts the mutation's impact to records matching the criteria"""
+    """
+    Restricts the mutation's impact to records matching the criteria
+    """
     filter: indicator_graphicsFilter
+
     """
     The maximum number of records in the collection permitted to be affected
     """
     atMost: Int! = 1
   ): indicator_graphicsDeleteResponse!
-  """Deletes zero or more records from the `indicator_instances` collection"""
+
+  """
+  Deletes zero or more records from the `indicator_instances` collection
+  """
   deleteFromindicator_instancesCollection(
-    """Restricts the mutation's impact to records matching the criteria"""
+    """
+    Restricts the mutation's impact to records matching the criteria
+    """
     filter: indicator_instancesFilter
+
     """
     The maximum number of records in the collection permitted to be affected
     """
     atMost: Int! = 1
   ): indicator_instancesDeleteResponse!
-  """Deletes zero or more records from the `indicators` collection"""
+
+  """
+  Deletes zero or more records from the `indicators` collection
+  """
   deleteFromindicatorsCollection(
-    """Restricts the mutation's impact to records matching the criteria"""
+    """
+    Restricts the mutation's impact to records matching the criteria
+    """
     filter: indicatorsFilter
+
     """
     The maximum number of records in the collection permitted to be affected
     """
     atMost: Int! = 1
   ): indicatorsDeleteResponse!
+
   """
   Adds one or more `extraction_learning_dataset` records to the collection
   """
-  insertIntoextraction_learning_datasetCollection(objects: [extraction_learning_datasetInsertInput!]!): extraction_learning_datasetInsertResponse
-  """Adds one or more `indicator_graphics` records to the collection"""
-  insertIntoindicator_graphicsCollection(objects: [indicator_graphicsInsertInput!]!): indicator_graphicsInsertResponse
-  """Adds one or more `indicator_instances` records to the collection"""
-  insertIntoindicator_instancesCollection(objects: [indicator_instancesInsertInput!]!): indicator_instancesInsertResponse
-  """Adds one or more `indicators` records to the collection"""
-  insertIntoindicatorsCollection(objects: [indicatorsInsertInput!]!): indicatorsInsertResponse
+  insertIntoextraction_learning_datasetCollection(
+    objects: [extraction_learning_datasetInsertInput!]!
+  ): extraction_learning_datasetInsertResponse
+
+  """
+  Adds one or more `indicator_graphics` records to the collection
+  """
+  insertIntoindicator_graphicsCollection(
+    objects: [indicator_graphicsInsertInput!]!
+  ): indicator_graphicsInsertResponse
+
+  """
+  Adds one or more `indicator_instances` records to the collection
+  """
+  insertIntoindicator_instancesCollection(
+    objects: [indicator_instancesInsertInput!]!
+  ): indicator_instancesInsertResponse
+
+  """
+  Adds one or more `indicators` records to the collection
+  """
+  insertIntoindicatorsCollection(
+    objects: [indicatorsInsertInput!]!
+  ): indicatorsInsertResponse
+
   """
   Updates zero or more records in the `extraction_learning_dataset` collection
   """
@@ -570,47 +695,72 @@ type Mutation {
     Fields that are set will be updated for all records matching the `filter`
     """
     set: extraction_learning_datasetUpdateInput!
-    """Restricts the mutation's impact to records matching the criteria"""
+
+    """
+    Restricts the mutation's impact to records matching the criteria
+    """
     filter: extraction_learning_datasetFilter
+
     """
     The maximum number of records in the collection permitted to be affected
     """
     atMost: Int! = 1
   ): extraction_learning_datasetUpdateResponse!
-  """Updates zero or more records in the `indicator_graphics` collection"""
+
+  """
+  Updates zero or more records in the `indicator_graphics` collection
+  """
   updateindicator_graphicsCollection(
     """
     Fields that are set will be updated for all records matching the `filter`
     """
     set: indicator_graphicsUpdateInput!
-    """Restricts the mutation's impact to records matching the criteria"""
+
+    """
+    Restricts the mutation's impact to records matching the criteria
+    """
     filter: indicator_graphicsFilter
+
     """
     The maximum number of records in the collection permitted to be affected
     """
     atMost: Int! = 1
   ): indicator_graphicsUpdateResponse!
-  """Updates zero or more records in the `indicator_instances` collection"""
+
+  """
+  Updates zero or more records in the `indicator_instances` collection
+  """
   updateindicator_instancesCollection(
     """
     Fields that are set will be updated for all records matching the `filter`
     """
     set: indicator_instancesUpdateInput!
-    """Restricts the mutation's impact to records matching the criteria"""
+
+    """
+    Restricts the mutation's impact to records matching the criteria
+    """
     filter: indicator_instancesFilter
+
     """
     The maximum number of records in the collection permitted to be affected
     """
     atMost: Int! = 1
   ): indicator_instancesUpdateResponse!
-  """Updates zero or more records in the `indicators` collection"""
+
+  """
+  Updates zero or more records in the `indicators` collection
+  """
   updateindicatorsCollection(
     """
     Fields that are set will be updated for all records matching the `filter`
     """
     set: indicatorsUpdateInput!
-    """Restricts the mutation's impact to records matching the criteria"""
+
+    """
+    Restricts the mutation's impact to records matching the criteria
+    """
     filter: indicatorsFilter
+
     """
     The maximum number of records in the collection permitted to be affected
     """
@@ -619,11 +769,15 @@ type Mutation {
 }
 
 interface Node {
-  """Retrieves a record by `ID`"""
+  """
+  Retrieves a record by `ID`
+  """
   nodeId: ID!
 }
 
-"""Any type not handled by the type system"""
+"""
+Any type not handled by the type system
+"""
 scalar Opaque
 
 """
@@ -634,15 +788,28 @@ input OpaqueFilter {
   is: FilterIs
 }
 
-"""Defines a per-field sorting order"""
+"""
+Defines a per-field sorting order
+"""
 enum OrderByDirection {
-  """Ascending order, nulls first"""
+  """
+  Ascending order, nulls first
+  """
   AscNullsFirst
-  """Ascending order, nulls last"""
+
+  """
+  Ascending order, nulls last
+  """
   AscNullsLast
-  """Descending order, nulls first"""
+
+  """
+  Descending order, nulls first
+  """
   DescNullsFirst
-  """Descending order, nulls last"""
+
+  """
+  Descending order, nulls last
+  """
   DescNullsLast
 }
 
@@ -653,87 +820,177 @@ type PageInfo {
   startCursor: String
 }
 
-"""The root type for querying data"""
+"""
+The root type for querying data
+"""
 type Query {
-  """A pagable collection of type `extraction_learning_dataset`"""
+  """
+  A pagable collection of type `extraction_learning_dataset`
+  """
   extraction_learning_datasetCollection(
-    """Query the first `n` records in the collection"""
+    """
+    Query the first `n` records in the collection
+    """
     first: Int
-    """Query the last `n` records in the collection"""
+
+    """
+    Query the last `n` records in the collection
+    """
     last: Int
-    """Query values in the collection before the provided cursor"""
+
+    """
+    Query values in the collection before the provided cursor
+    """
     before: Cursor
-    """Query values in the collection after the provided cursor"""
+
+    """
+    Query values in the collection after the provided cursor
+    """
     after: Cursor
+
     """
     Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
     """
     offset: Int
-    """Filters to apply to the results set when querying from the collection"""
+
+    """
+    Filters to apply to the results set when querying from the collection
+    """
     filter: extraction_learning_datasetFilter
-    """Sort order to apply to the collection"""
+
+    """
+    Sort order to apply to the collection
+    """
     orderBy: [extraction_learning_datasetOrderBy!]
   ): extraction_learning_datasetConnection
-  """A pagable collection of type `indicator_graphics`"""
+
+  """
+  A pagable collection of type `indicator_graphics`
+  """
   indicator_graphicsCollection(
-    """Query the first `n` records in the collection"""
+    """
+    Query the first `n` records in the collection
+    """
     first: Int
-    """Query the last `n` records in the collection"""
+
+    """
+    Query the last `n` records in the collection
+    """
     last: Int
-    """Query values in the collection before the provided cursor"""
+
+    """
+    Query values in the collection before the provided cursor
+    """
     before: Cursor
-    """Query values in the collection after the provided cursor"""
+
+    """
+    Query values in the collection after the provided cursor
+    """
     after: Cursor
+
     """
     Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
     """
     offset: Int
-    """Filters to apply to the results set when querying from the collection"""
+
+    """
+    Filters to apply to the results set when querying from the collection
+    """
     filter: indicator_graphicsFilter
-    """Sort order to apply to the collection"""
+
+    """
+    Sort order to apply to the collection
+    """
     orderBy: [indicator_graphicsOrderBy!]
   ): indicator_graphicsConnection
-  """A pagable collection of type `indicator_instances`"""
+
+  """
+  A pagable collection of type `indicator_instances`
+  """
   indicator_instancesCollection(
-    """Query the first `n` records in the collection"""
+    """
+    Query the first `n` records in the collection
+    """
     first: Int
-    """Query the last `n` records in the collection"""
+
+    """
+    Query the last `n` records in the collection
+    """
     last: Int
-    """Query values in the collection before the provided cursor"""
+
+    """
+    Query values in the collection before the provided cursor
+    """
     before: Cursor
-    """Query values in the collection after the provided cursor"""
+
+    """
+    Query values in the collection after the provided cursor
+    """
     after: Cursor
+
     """
     Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
     """
     offset: Int
-    """Filters to apply to the results set when querying from the collection"""
+
+    """
+    Filters to apply to the results set when querying from the collection
+    """
     filter: indicator_instancesFilter
-    """Sort order to apply to the collection"""
+
+    """
+    Sort order to apply to the collection
+    """
     orderBy: [indicator_instancesOrderBy!]
   ): indicator_instancesConnection
-  """A pagable collection of type `indicators`"""
+
+  """
+  A pagable collection of type `indicators`
+  """
   indicatorsCollection(
-    """Query the first `n` records in the collection"""
+    """
+    Query the first `n` records in the collection
+    """
     first: Int
-    """Query the last `n` records in the collection"""
+
+    """
+    Query the last `n` records in the collection
+    """
     last: Int
-    """Query values in the collection before the provided cursor"""
+
+    """
+    Query values in the collection before the provided cursor
+    """
     before: Cursor
-    """Query values in the collection after the provided cursor"""
+
+    """
+    Query values in the collection after the provided cursor
+    """
     after: Cursor
+
     """
     Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
     """
     offset: Int
-    """Filters to apply to the results set when querying from the collection"""
+
+    """
+    Filters to apply to the results set when querying from the collection
+    """
     filter: indicatorsFilter
-    """Sort order to apply to the collection"""
+
+    """
+    Sort order to apply to the collection
+    """
     orderBy: [indicatorsOrderBy!]
   ): indicatorsConnection
-  """Retrieve a record by its `ID`"""
+
+  """
+  Retrieve a record by its `ID`
+  """
   node(
-    """The record's `ID`"""
+    """
+    The record's `ID`
+    """
     nodeId: ID!
   ): Node
 }
@@ -768,7 +1025,9 @@ input StringListFilter {
   overlaps: [String!]
 }
 
-"""A time without date information"""
+"""
+A time without date information
+"""
 scalar Time
 
 """
@@ -796,7 +1055,9 @@ input TimeListFilter {
   overlaps: [Time!]
 }
 
-"""A universally unique identifier"""
+"""
+A universally unique identifier
+"""
 scalar UUID
 
 """
@@ -821,7 +1082,9 @@ input UUIDListFilter {
 }
 
 type extraction_learning_dataset implements Node {
-  """Globally Unique Record Identifier"""
+  """
+  Globally Unique Record Identifier
+  """
   nodeId: ID!
   id: UUID!
   indicator_id: String!
@@ -834,7 +1097,9 @@ type extraction_learning_dataset implements Node {
 }
 
 type indicator_graphics implements Node {
-  """Globally Unique Record Identifier"""
+  """
+  Globally Unique Record Identifier
+  """
   nodeId: ID!
   id: UUID!
   indicator_id: String!
@@ -846,7 +1111,9 @@ type indicator_graphics implements Node {
 }
 
 type indicator_instances implements Node {
-  """Globally Unique Record Identifier"""
+  """
+  Globally Unique Record Identifier
+  """
   nodeId: ID!
   id: UUID!
   indicator_id: String
@@ -856,27 +1123,47 @@ type indicator_instances implements Node {
   extraction_rules: JSON
   indicators: indicators
   indicator_graphicsCollection(
-    """Query the first `n` records in the collection"""
+    """
+    Query the first `n` records in the collection
+    """
     first: Int
-    """Query the last `n` records in the collection"""
+
+    """
+    Query the last `n` records in the collection
+    """
     last: Int
-    """Query values in the collection before the provided cursor"""
+
+    """
+    Query values in the collection before the provided cursor
+    """
     before: Cursor
-    """Query values in the collection after the provided cursor"""
+
+    """
+    Query values in the collection after the provided cursor
+    """
     after: Cursor
+
     """
     Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
     """
     offset: Int
-    """Filters to apply to the results set when querying from the collection"""
+
+    """
+    Filters to apply to the results set when querying from the collection
+    """
     filter: indicator_graphicsFilter
-    """Sort order to apply to the collection"""
+
+    """
+    Sort order to apply to the collection
+    """
     orderBy: [indicator_graphicsOrderBy!]
   ): indicator_graphicsConnection
 }
 
 type indicators implements Node {
-  """Globally Unique Record Identifier"""
+  """
+  Globally Unique Record Identifier
+  """
   nodeId: ID!
   id: UUID!
   indicator_id: String!
@@ -885,21 +1172,39 @@ type indicators implements Node {
   settings: JSON
   created_at: Datetime
   indicator_instancesCollection(
-    """Query the first `n` records in the collection"""
+    """
+    Query the first `n` records in the collection
+    """
     first: Int
-    """Query the last `n` records in the collection"""
+
+    """
+    Query the last `n` records in the collection
+    """
     last: Int
-    """Query values in the collection before the provided cursor"""
+
+    """
+    Query values in the collection before the provided cursor
+    """
     before: Cursor
-    """Query values in the collection after the provided cursor"""
+
+    """
+    Query values in the collection after the provided cursor
+    """
     after: Cursor
+
     """
     Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
     """
     offset: Int
-    """Filters to apply to the results set when querying from the collection"""
+
+    """
+    Filters to apply to the results set when querying from the collection
+    """
     filter: indicator_instancesFilter
-    """Sort order to apply to the collection"""
+
+    """
+    Sort order to apply to the collection
+    """
     orderBy: [indicator_instancesOrderBy!]
   ): indicator_instancesConnection
 }
