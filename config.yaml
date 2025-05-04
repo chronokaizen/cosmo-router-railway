@@ -11,7 +11,6 @@ log_level: "debug"
 listen_addr: "0.0.0.0:3002"
 playground_enabled: true
 playground_path: "/"
-controlplane_url: "https://cosmo-cp.wundergraph.com"
 introspection_enabled: true
 json_log: true
 shutdown_delay: 15s
