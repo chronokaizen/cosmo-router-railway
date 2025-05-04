@@ -5,12 +5,6 @@
 
 version: "1"
 
-# Instance and graph settings
-instance_id: "my-router-instance"
-graph:
-  token: "${GRAPH_API_TOKEN}" # Set via env var or secret
-  #sign_key: "<32-byte-sign-key>"
-
 # General router options
 dev_mode: true
 log_level: "debug"
