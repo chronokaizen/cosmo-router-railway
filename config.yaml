@@ -25,7 +25,7 @@ poll_interval: 10s
 health_check_path: "/health"
 readiness_check_path: "/health/ready"
 liveness_check_path: "/health/live"
-router_config_path: "./config.json"
+router_config_path: "/app/config.json"
 
 # Header manipulation
 headers:
