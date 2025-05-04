@@ -29,13 +29,12 @@ headers:
         named: "apikey"
 
 cors:
-  allow_any_origin: false
-  allowed_origins:
-    - "https://cosmo.wundergraph.com"
-  allowed_headers:
-    - "apikey"
-    - "X-WG-TRACE"
-  allowed_methods:
+  allow_methods:
     - "POST"
     - "OPTIONS"
+  allow_origins:
+    - "https://cosmo.wundergraph.com"
+  allow_headers:
+    - "apikey"
+    - "X-WG-TRACE"
   allow_credentials: false
