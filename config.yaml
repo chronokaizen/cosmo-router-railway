@@ -13,7 +13,7 @@ graph:
 
 # General router options
 dev_mode: true
-log_level: "info"
+log_level: "debug"
 listen_addr: "0.0.0.0:3002"
 playground_enabled: true
 playground_path: "/"
@@ -25,14 +25,12 @@ poll_interval: 10s
 health_check_path: "/health"
 readiness_check_path: "/health/ready"
 liveness_check_path: "/health/live"
-router_config_path: "/app/router-config.json"
+router_config_path: "./config.json"
 
 # Header manipulation
 headers:
   all:
     request:
-      - op: "propagate"
-        named: "Authorization"
       - op: "propagate"
         named: "apikey"
 

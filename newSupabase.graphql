@@ -1,0 +1,989 @@
+"""A high precision floating point value represented as a string"""
+scalar BigFloat
+
+"""
+Boolean expression comparing fields on type "BigFloat"
+"""
+input BigFloatFilter {
+  eq: BigFloat
+  gt: BigFloat
+  gte: BigFloat
+  in: [BigFloat!]
+  is: FilterIs
+  lt: BigFloat
+  lte: BigFloat
+  neq: BigFloat
+}
+
+"""
+Boolean expression comparing fields on type "BigFloatList"
+"""
+input BigFloatListFilter {
+  containedBy: [BigFloat!]
+  contains: [BigFloat!]
+  eq: [BigFloat!]
+  is: FilterIs
+  overlaps: [BigFloat!]
+}
+
+"""An arbitrary size integer represented as a string"""
+scalar BigInt
+
+"""
+Boolean expression comparing fields on type "BigInt"
+"""
+input BigIntFilter {
+  eq: BigInt
+  gt: BigInt
+  gte: BigInt
+  in: [BigInt!]
+  is: FilterIs
+  lt: BigInt
+  lte: BigInt
+  neq: BigInt
+}
+
+"""
+Boolean expression comparing fields on type "BigIntList"
+"""
+input BigIntListFilter {
+  containedBy: [BigInt!]
+  contains: [BigInt!]
+  eq: [BigInt!]
+  is: FilterIs
+  overlaps: [BigInt!]
+}
+
+"""
+Boolean expression comparing fields on type "Boolean"
+"""
+input BooleanFilter {
+  eq: Boolean
+  is: FilterIs
+}
+
+"""
+Boolean expression comparing fields on type "BooleanList"
+"""
+input BooleanListFilter {
+  containedBy: [Boolean!]
+  contains: [Boolean!]
+  eq: [Boolean!]
+  is: FilterIs
+  overlaps: [Boolean!]
+}
+
+"""
+An opaque string using for tracking a position in results during pagination
+"""
+scalar Cursor
+
+"""A date without time information"""
+scalar Date
+
+"""
+Boolean expression comparing fields on type "Date"
+"""
+input DateFilter {
+  eq: Date
+  gt: Date
+  gte: Date
+  in: [Date!]
+  is: FilterIs
+  lt: Date
+  lte: Date
+  neq: Date
+}
+
+"""
+Boolean expression comparing fields on type "DateList"
+"""
+input DateListFilter {
+  containedBy: [Date!]
+  contains: [Date!]
+  eq: [Date!]
+  is: FilterIs
+  overlaps: [Date!]
+}
+
+"""A date and time"""
+scalar Datetime
+
+"""
+Boolean expression comparing fields on type "Datetime"
+"""
+input DatetimeFilter {
+  eq: Datetime
+  gt: Datetime
+  gte: Datetime
+  in: [Datetime!]
+  is: FilterIs
+  lt: Datetime
+  lte: Datetime
+  neq: Datetime
+}
+
+"""
+Boolean expression comparing fields on type "DatetimeList"
+"""
+input DatetimeListFilter {
+  containedBy: [Datetime!]
+  contains: [Datetime!]
+  eq: [Datetime!]
+  is: FilterIs
+  overlaps: [Datetime!]
+}
+
+type extraction_learning_dataset implements Node {
+  """Globally Unique Record Identifier"""
+  nodeId: ID!
+  id: UUID!
+  indicator_id: String!
+  instance_name: String!
+  extraction_rule: JSON!
+  graphics_sample: JSON!
+  mapping_instructions: String
+  created_at: Datetime
+  source: String
+}
+
+type extraction_learning_datasetConnection {
+  edges: [extraction_learning_datasetEdge!]!
+  pageInfo: PageInfo!
+}
+
+type extraction_learning_datasetDeleteResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [extraction_learning_dataset!]!
+}
+
+type extraction_learning_datasetEdge {
+  cursor: String!
+  node: extraction_learning_dataset!
+}
+
+input extraction_learning_datasetFilter {
+  id: UUIDFilter
+  indicator_id: StringFilter
+  instance_name: StringFilter
+  mapping_instructions: StringFilter
+  created_at: DatetimeFilter
+  source: StringFilter
+  nodeId: IDFilter
+
+  """
+  Returns true only if all its inner filters are true, otherwise returns false
+  """
+  and: [extraction_learning_datasetFilter!]
+
+  """
+  Returns true if at least one of its inner filters is true, otherwise returns false
+  """
+  or: [extraction_learning_datasetFilter!]
+
+  """Negates a filter"""
+  not: extraction_learning_datasetFilter
+}
+
+input extraction_learning_datasetInsertInput {
+  id: UUID
+  indicator_id: String
+  instance_name: String
+  extraction_rule: JSON
+  graphics_sample: JSON
+  mapping_instructions: String
+  created_at: Datetime
+  source: String
+}
+
+type extraction_learning_datasetInsertResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [extraction_learning_dataset!]!
+}
+
+input extraction_learning_datasetOrderBy {
+  id: OrderByDirection
+  indicator_id: OrderByDirection
+  instance_name: OrderByDirection
+  mapping_instructions: OrderByDirection
+  created_at: OrderByDirection
+  source: OrderByDirection
+}
+
+input extraction_learning_datasetUpdateInput {
+  id: UUID
+  indicator_id: String
+  instance_name: String
+  extraction_rule: JSON
+  graphics_sample: JSON
+  mapping_instructions: String
+  created_at: Datetime
+  source: String
+}
+
+type extraction_learning_datasetUpdateResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [extraction_learning_dataset!]!
+}
+
+enum FilterIs {
+  NULL
+  NOT_NULL
+}
+
+"""
+Boolean expression comparing fields on type "Float"
+"""
+input FloatFilter {
+  eq: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  is: FilterIs
+  lt: Float
+  lte: Float
+  neq: Float
+}
+
+"""
+Boolean expression comparing fields on type "FloatList"
+"""
+input FloatListFilter {
+  containedBy: [Float!]
+  contains: [Float!]
+  eq: [Float!]
+  is: FilterIs
+  overlaps: [Float!]
+}
+
+"""
+Boolean expression comparing fields on type "ID"
+"""
+input IDFilter {
+  eq: ID
+}
+
+type indicator_graphics implements Node {
+  """Globally Unique Record Identifier"""
+  nodeId: ID!
+  id: UUID!
+  indicator_id: String!
+  created_at: Datetime
+  context: JSON
+  graphics: JSON
+  indicator_instance_id: UUID
+  indicator_instances: indicator_instances
+}
+
+type indicator_graphicsConnection {
+  edges: [indicator_graphicsEdge!]!
+  pageInfo: PageInfo!
+}
+
+type indicator_graphicsDeleteResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [indicator_graphics!]!
+}
+
+type indicator_graphicsEdge {
+  cursor: String!
+  node: indicator_graphics!
+}
+
+input indicator_graphicsFilter {
+  id: UUIDFilter
+  indicator_id: StringFilter
+  created_at: DatetimeFilter
+  indicator_instance_id: UUIDFilter
+  nodeId: IDFilter
+
+  """
+  Returns true only if all its inner filters are true, otherwise returns false
+  """
+  and: [indicator_graphicsFilter!]
+
+  """
+  Returns true if at least one of its inner filters is true, otherwise returns false
+  """
+  or: [indicator_graphicsFilter!]
+
+  """Negates a filter"""
+  not: indicator_graphicsFilter
+}
+
+input indicator_graphicsInsertInput {
+  id: UUID
+  indicator_id: String
+  created_at: Datetime
+  context: JSON
+  graphics: JSON
+  indicator_instance_id: UUID
+}
+
+type indicator_graphicsInsertResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [indicator_graphics!]!
+}
+
+input indicator_graphicsOrderBy {
+  id: OrderByDirection
+  indicator_id: OrderByDirection
+  created_at: OrderByDirection
+  indicator_instance_id: OrderByDirection
+}
+
+input indicator_graphicsUpdateInput {
+  id: UUID
+  indicator_id: String
+  created_at: Datetime
+  context: JSON
+  graphics: JSON
+  indicator_instance_id: UUID
+}
+
+type indicator_graphicsUpdateResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [indicator_graphics!]!
+}
+
+type indicator_instances implements Node {
+  """Globally Unique Record Identifier"""
+  nodeId: ID!
+  id: UUID!
+  indicator_id: String
+  name: String!
+  settings: JSON
+  created_at: Datetime
+  extraction_rules: JSON
+  indicators: indicators
+  indicator_graphicsCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """
+    Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
+    """
+    offset: Int
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: indicator_graphicsFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [indicator_graphicsOrderBy!]
+  ): indicator_graphicsConnection
+}
+
+type indicator_instancesConnection {
+  edges: [indicator_instancesEdge!]!
+  pageInfo: PageInfo!
+}
+
+type indicator_instancesDeleteResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [indicator_instances!]!
+}
+
+type indicator_instancesEdge {
+  cursor: String!
+  node: indicator_instances!
+}
+
+input indicator_instancesFilter {
+  id: UUIDFilter
+  indicator_id: StringFilter
+  name: StringFilter
+  created_at: DatetimeFilter
+  nodeId: IDFilter
+
+  """
+  Returns true only if all its inner filters are true, otherwise returns false
+  """
+  and: [indicator_instancesFilter!]
+
+  """
+  Returns true if at least one of its inner filters is true, otherwise returns false
+  """
+  or: [indicator_instancesFilter!]
+
+  """Negates a filter"""
+  not: indicator_instancesFilter
+}
+
+input indicator_instancesInsertInput {
+  id: UUID
+  indicator_id: String
+  name: String
+  settings: JSON
+  created_at: Datetime
+  extraction_rules: JSON
+}
+
+type indicator_instancesInsertResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [indicator_instances!]!
+}
+
+input indicator_instancesOrderBy {
+  id: OrderByDirection
+  indicator_id: OrderByDirection
+  name: OrderByDirection
+  created_at: OrderByDirection
+}
+
+input indicator_instancesUpdateInput {
+  id: UUID
+  indicator_id: String
+  name: String
+  settings: JSON
+  created_at: Datetime
+  extraction_rules: JSON
+}
+
+type indicator_instancesUpdateResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [indicator_instances!]!
+}
+
+type indicators implements Node {
+  """Globally Unique Record Identifier"""
+  nodeId: ID!
+  id: UUID!
+  indicator_id: String!
+  name: String!
+  enabled: Boolean
+  settings: JSON
+  created_at: Datetime
+  indicator_instancesCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """
+    Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
+    """
+    offset: Int
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: indicator_instancesFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [indicator_instancesOrderBy!]
+  ): indicator_instancesConnection
+}
+
+type indicatorsConnection {
+  edges: [indicatorsEdge!]!
+  pageInfo: PageInfo!
+}
+
+type indicatorsDeleteResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [indicators!]!
+}
+
+type indicatorsEdge {
+  cursor: String!
+  node: indicators!
+}
+
+input indicatorsFilter {
+  id: UUIDFilter
+  indicator_id: StringFilter
+  name: StringFilter
+  enabled: BooleanFilter
+  created_at: DatetimeFilter
+  nodeId: IDFilter
+
+  """
+  Returns true only if all its inner filters are true, otherwise returns false
+  """
+  and: [indicatorsFilter!]
+
+  """
+  Returns true if at least one of its inner filters is true, otherwise returns false
+  """
+  or: [indicatorsFilter!]
+
+  """Negates a filter"""
+  not: indicatorsFilter
+}
+
+input indicatorsInsertInput {
+  id: UUID
+  indicator_id: String
+  name: String
+  enabled: Boolean
+  settings: JSON
+  created_at: Datetime
+}
+
+type indicatorsInsertResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [indicators!]!
+}
+
+input indicatorsOrderBy {
+  id: OrderByDirection
+  indicator_id: OrderByDirection
+  name: OrderByDirection
+  enabled: OrderByDirection
+  created_at: OrderByDirection
+}
+
+input indicatorsUpdateInput {
+  id: UUID
+  indicator_id: String
+  name: String
+  enabled: Boolean
+  settings: JSON
+  created_at: Datetime
+}
+
+type indicatorsUpdateResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [indicators!]!
+}
+
+"""
+Boolean expression comparing fields on type "Int"
+"""
+input IntFilter {
+  eq: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  is: FilterIs
+  lt: Int
+  lte: Int
+  neq: Int
+}
+
+"""
+Boolean expression comparing fields on type "IntList"
+"""
+input IntListFilter {
+  containedBy: [Int!]
+  contains: [Int!]
+  eq: [Int!]
+  is: FilterIs
+  overlaps: [Int!]
+}
+
+"""A Javascript Object Notation value serialized as a string"""
+scalar JSON
+
+"""The root type for creating and mutating data"""
+type Mutation {
+  """
+  Deletes zero or more records from the `extraction_learning_dataset` collection
+  """
+  deleteFromextraction_learning_datasetCollection(
+    """Restricts the mutation's impact to records matching the criteria"""
+    filter: extraction_learning_datasetFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): extraction_learning_datasetDeleteResponse!
+
+  """Deletes zero or more records from the `indicator_graphics` collection"""
+  deleteFromindicator_graphicsCollection(
+    """Restricts the mutation's impact to records matching the criteria"""
+    filter: indicator_graphicsFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): indicator_graphicsDeleteResponse!
+
+  """Deletes zero or more records from the `indicator_instances` collection"""
+  deleteFromindicator_instancesCollection(
+    """Restricts the mutation's impact to records matching the criteria"""
+    filter: indicator_instancesFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): indicator_instancesDeleteResponse!
+
+  """Deletes zero or more records from the `indicators` collection"""
+  deleteFromindicatorsCollection(
+    """Restricts the mutation's impact to records matching the criteria"""
+    filter: indicatorsFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): indicatorsDeleteResponse!
+
+  """
+  Adds one or more `extraction_learning_dataset` records to the collection
+  """
+  insertIntoextraction_learning_datasetCollection(objects: [extraction_learning_datasetInsertInput!]!): extraction_learning_datasetInsertResponse
+
+  """Adds one or more `indicator_graphics` records to the collection"""
+  insertIntoindicator_graphicsCollection(objects: [indicator_graphicsInsertInput!]!): indicator_graphicsInsertResponse
+
+  """Adds one or more `indicator_instances` records to the collection"""
+  insertIntoindicator_instancesCollection(objects: [indicator_instancesInsertInput!]!): indicator_instancesInsertResponse
+
+  """Adds one or more `indicators` records to the collection"""
+  insertIntoindicatorsCollection(objects: [indicatorsInsertInput!]!): indicatorsInsertResponse
+
+  """
+  Updates zero or more records in the `extraction_learning_dataset` collection
+  """
+  updateextraction_learning_datasetCollection(
+    """
+    Fields that are set will be updated for all records matching the `filter`
+    """
+    set: extraction_learning_datasetUpdateInput!
+
+    """Restricts the mutation's impact to records matching the criteria"""
+    filter: extraction_learning_datasetFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): extraction_learning_datasetUpdateResponse!
+
+  """Updates zero or more records in the `indicator_graphics` collection"""
+  updateindicator_graphicsCollection(
+    """
+    Fields that are set will be updated for all records matching the `filter`
+    """
+    set: indicator_graphicsUpdateInput!
+
+    """Restricts the mutation's impact to records matching the criteria"""
+    filter: indicator_graphicsFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): indicator_graphicsUpdateResponse!
+
+  """Updates zero or more records in the `indicator_instances` collection"""
+  updateindicator_instancesCollection(
+    """
+    Fields that are set will be updated for all records matching the `filter`
+    """
+    set: indicator_instancesUpdateInput!
+
+    """Restricts the mutation's impact to records matching the criteria"""
+    filter: indicator_instancesFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): indicator_instancesUpdateResponse!
+
+  """Updates zero or more records in the `indicators` collection"""
+  updateindicatorsCollection(
+    """
+    Fields that are set will be updated for all records matching the `filter`
+    """
+    set: indicatorsUpdateInput!
+
+    """Restricts the mutation's impact to records matching the criteria"""
+    filter: indicatorsFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): indicatorsUpdateResponse!
+}
+
+interface Node {
+  """Retrieves a record by `ID`"""
+  nodeId: ID!
+}
+
+"""Any type not handled by the type system"""
+scalar Opaque
+
+"""
+Boolean expression comparing fields on type "Opaque"
+"""
+input OpaqueFilter {
+  eq: Opaque
+  is: FilterIs
+}
+
+"""Defines a per-field sorting order"""
+enum OrderByDirection {
+  """Ascending order, nulls first"""
+  AscNullsFirst
+
+  """Ascending order, nulls last"""
+  AscNullsLast
+
+  """Descending order, nulls first"""
+  DescNullsFirst
+
+  """Descending order, nulls last"""
+  DescNullsLast
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+"""The root type for querying data"""
+type Query {
+  """A pagable collection of type `extraction_learning_dataset`"""
+  extraction_learning_datasetCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """
+    Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
+    """
+    offset: Int
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: extraction_learning_datasetFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [extraction_learning_datasetOrderBy!]
+  ): extraction_learning_datasetConnection
+
+  """A pagable collection of type `indicator_graphics`"""
+  indicator_graphicsCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """
+    Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
+    """
+    offset: Int
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: indicator_graphicsFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [indicator_graphicsOrderBy!]
+  ): indicator_graphicsConnection
+
+  """A pagable collection of type `indicator_instances`"""
+  indicator_instancesCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """
+    Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
+    """
+    offset: Int
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: indicator_instancesFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [indicator_instancesOrderBy!]
+  ): indicator_instancesConnection
+
+  """A pagable collection of type `indicators`"""
+  indicatorsCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """
+    Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
+    """
+    offset: Int
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: indicatorsFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [indicatorsOrderBy!]
+  ): indicatorsConnection
+
+  """Retrieve a record by its `ID`"""
+  node(
+    """The record's `ID`"""
+    nodeId: ID!
+  ): Node
+}
+
+"""
+Boolean expression comparing fields on type "String"
+"""
+input StringFilter {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  in: [String!]
+  iregex: String
+  is: FilterIs
+  like: String
+  lt: String
+  lte: String
+  neq: String
+  regex: String
+  startsWith: String
+}
+
+"""
+Boolean expression comparing fields on type "StringList"
+"""
+input StringListFilter {
+  containedBy: [String!]
+  contains: [String!]
+  eq: [String!]
+  is: FilterIs
+  overlaps: [String!]
+}
+
+"""A time without date information"""
+scalar Time
+
+"""
+Boolean expression comparing fields on type "Time"
+"""
+input TimeFilter {
+  eq: Time
+  gt: Time
+  gte: Time
+  in: [Time!]
+  is: FilterIs
+  lt: Time
+  lte: Time
+  neq: Time
+}
+
+"""
+Boolean expression comparing fields on type "TimeList"
+"""
+input TimeListFilter {
+  containedBy: [Time!]
+  contains: [Time!]
+  eq: [Time!]
+  is: FilterIs
+  overlaps: [Time!]
+}
+
+"""A universally unique identifier"""
+scalar UUID
+
+"""
+Boolean expression comparing fields on type "UUID"
+"""
+input UUIDFilter {
+  eq: UUID
+  in: [UUID!]
+  is: FilterIs
+  neq: UUID
+}
+
+"""
+Boolean expression comparing fields on type "UUIDList"
+"""
+input UUIDListFilter {
+  containedBy: [UUID!]
+  contains: [UUID!]
+  eq: [UUID!]
+  is: FilterIs
+  overlaps: [UUID!]
+}
+
