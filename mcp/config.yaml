@@ -6,7 +6,7 @@
 version: "1"
 
 # General router options
-dev_mode: true
+dev_mode: false
 log_level: "debug"
 listen_addr: "localhost:3002"
 playground_enabled: false
@@ -26,6 +26,17 @@ headers:
     request:
       - op: "propagate"
         named: "apikey"
+
+cors:
+  allow_methods:
+    - "POST"
+    - "OPTIONS"
+  allow_origins:
+    - "*"
+  allow_headers:
+    - "apikey"
+    - "X-WG-TRACE"
+  allow_credentials: false
 
 mcp:
   enabled: true
