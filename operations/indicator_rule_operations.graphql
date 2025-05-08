@@ -1,0 +1,72 @@
+# --- Query: Get All Enabled Indicators ---
+query GetEnabledIndicators {
+  indicatorsCollection(filter: { enabled: { eq: true } }) {
+    edges {
+      node {
+        indicator_id
+        name
+        enabled
+      }
+    }
+  }
+}
+
+# --- Query: Get Indicator Instance ID by Indicator and Name ---
+query GetIndicatorInstanceId($indicatorId: String!, $instanceName: String!) {
+  indicator_instancesCollection(filter: { indicator_id: { eq: $indicatorId }, name: { eq: $instanceName } }) {
+    edges {
+      node {
+        id
+        name
+        indicator_id
+      }
+    }
+  }
+}
+
+# --- Query: Get Extraction History for an Instance ---
+query GetExtractionHistory($indicator_instance_id: UUID!) {
+  indicator_extractionsCollection(
+    filter: { indicator_instance_id: { eq: $indicator_instance_id } }
+    orderBy: [{ created_at: DescNullsLast }]
+  ) {
+    edges {
+      node {
+        id
+        indicator_instance_id
+        extraction_details
+        prompt
+        feedback
+        created_at
+      }
+    }
+  }
+}
+
+
+# --- Mutation: Insert Extraction Result ---
+mutation InsertExtraction($objects: [indicator_extractionsInsertInput!]!) {
+  insertIntoindicator_extractionsCollection(objects: $objects) {
+    records {
+      id
+      indicator_instance_id
+      extraction_details
+      prompt
+      feedback
+      created_at
+    }
+  }
+}
+
+# --- Mutation: Update Extraction Rules for an Instance ---
+mutation UpdateExtractionRules($id: UUID!, $extraction_rules: JSON!) {
+  updateindicator_instanceCollection(
+    filter: { id: { eq: $id } }
+    set: { extraction_rules: $extraction_rules }
+  ) {
+    records {
+      id
+      extraction_rules
+    }
+  }
+}
