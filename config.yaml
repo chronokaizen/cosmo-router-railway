@@ -10,7 +10,7 @@ dev_mode: true
 log_level: "debug"
 listen_addr: "0.0.0.0:3002"
 playground_enabled: true
-playground_path: "/"
+playground_path: "/playground"
 introspection_enabled: true
 json_log: true
 shutdown_delay: 15s
