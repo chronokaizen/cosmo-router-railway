@@ -34,8 +34,7 @@ mcp:
   router_url: "https://cosmo-router.up.railway.app/graphql"
   storage:
     provider_id: "mcp" 
-  graph_name: "toostat"
-  namespace: "toostat"
+  graph_name: "daas"
   enable_arbitrary_operations: true
   expose_schema: true
 
