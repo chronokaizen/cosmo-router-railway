@@ -32,7 +32,7 @@ cors:
     - "POST"
     - "OPTIONS"
   allow_origins:
-    - "https://cosmo.wundergraph.com"
+    - "*"
   allow_headers:
     - "apikey"
     - "X-WG-TRACE"
