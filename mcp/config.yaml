@@ -42,4 +42,4 @@ mcp:
 storage_providers:
   file_system:
     - id: "mcp"
-      path: "/app/operations/" # Relative to the router binary
+      path: "/app/operations" # Relative to the router binary
