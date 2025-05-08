@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/wundergraph/cosmo/router/main/router/pkg/config/config.schema.json
+
+# Cosmo Router full configuration example
+# See https://cosmo-docs.wundergraph.com/router/configuration for details
+
+mcp:
+  enabled: true
+  server:
+    listen_addr: "0.0.0.0:5025"
+  router_url: "https://cosmo-router.up.railway.app/graphql"
+  storage:
+    provider_id: "mcp" 
+  graph_name: "tooStat"
+  enable_arbitrary_operations: false
+  expose_schema: true
+
+# Configure storage providers
+storage_providers:
+  file_system:
+    - id: "mcp"
+      path: "/app/operations" # Relative to the router binary
