@@ -38,7 +38,7 @@ cors:
     - "X-WG-TRACE"
   allow_credentials: false
 
-  mcp:
+mcp:
   enabled: true
   server:
     listen_addr: "0.0.0.0:3002"
