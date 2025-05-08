@@ -6,7 +6,7 @@
 version: "1"
 
 # General router options
-dev_mode: true
+dev_mode: false
 log_level: "debug"
 listen_addr: "localhost:3002"
 playground_enabled: false
@@ -46,7 +46,7 @@ mcp:
   storage:
     provider_id: "mcp" 
   graph_name: "tooStat"
-  enable_arbitrary_operations: false
+  enable_arbitrary_operations: true
   expose_schema: true
 
 # Configure storage providers
