@@ -41,7 +41,7 @@ cors:
 mcp:
   enabled: true
   server:
-    listen_addr: "localhost:5025"
+    listen_addr: "0.0.0.0:5025"
   router_url: "https://cosmo-router.up.railway.app/graphql"
   storage:
     provider_id: "mcp" 
