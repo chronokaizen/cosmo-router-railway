@@ -47,7 +47,7 @@ mcp:
     provider_id: "mcp" 
   graph_name: "tooStat"
   enable_arbitrary_operations: false
-  expose_schema: false
+  expose_schema: true
 
 # Configure storage providers
 storage_providers:
