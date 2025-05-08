@@ -1,0 +1,18 @@
+# Returns the extraction history for a given indicator instance
+query GetExtractionHistory($indicator_instance_id: UUID!) {
+  indicator_extractionsCollection(
+    filter: { indicator_instance_id: { eq: $indicator_instance_id } }
+    orderBy: [{ created_at: DescNullsLast }]
+  ) {
+    edges {
+      node {
+        id
+        indicator_instance_id
+        extraction_details
+        prompt
+        feedback
+        created_at
+      }
+    }
+  }
+}

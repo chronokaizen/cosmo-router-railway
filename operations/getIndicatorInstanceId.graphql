@@ -1,0 +1,12 @@
+# Returns the indicator instance ID by indicator and name
+query GetIndicatorInstanceId($indicatorId: String!, $instanceName: String!) {
+  indicator_instancesCollection(filter: { indicator_id: { eq: $indicatorId }, name: { eq: $instanceName } }) {
+    edges {
+      node {
+        id
+        name
+        indicator_id
+      }
+    }
+  }
+}

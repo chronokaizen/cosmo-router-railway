@@ -1,0 +1,12 @@
+# Updates the extraction rules for an indicator instance
+mutation UpdateExtractionRules($id: UUID!, $extraction_rules: JSON!) {
+  updateindicator_instanceCollection(
+    filter: { id: { eq: $id } }
+    set: { extraction_rules: $extraction_rules }
+  ) {
+    records {
+      id
+      extraction_rules
+    }
+  }
+}

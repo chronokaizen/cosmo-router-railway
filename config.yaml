@@ -10,7 +10,7 @@ dev_mode: true
 log_level: "debug"
 listen_addr: "0.0.0.0:3002"
 playground_enabled: true
-playground_path: "/playground"
+playground_path: "/"
 introspection_enabled: true
 json_log: true
 shutdown_delay: 15s
@@ -41,7 +41,7 @@ cors:
 mcp:
   enabled: true
   server:
-    listen_addr: "0.0.0.0:3002"
+    listen_addr: "0.0.0.0:5025"
   storage:
     provider_id: "mcp" 
   graph_name: "tooStat"

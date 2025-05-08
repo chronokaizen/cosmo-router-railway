@@ -1,0 +1,13 @@
+# Inserts a new extraction result for an indicator instance
+mutation InsertExtraction($objects: [indicator_extractionsInsertInput!]!) {
+  insertIntoindicator_extractionsCollection(objects: $objects) {
+    records {
+      id
+      indicator_instance_id
+      extraction_details
+      prompt
+      feedback
+      created_at
+    }
+  }
+}

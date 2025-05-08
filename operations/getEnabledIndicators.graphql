@@ -1,0 +1,12 @@
+# Returns all enabled indicators
+query GetEnabledIndicators {
+  indicatorsCollection(filter: { enabled: { eq: true } }) {
+    edges {
+      node {
+        indicator_id
+        name
+        enabled
+      }
+    }
+  }
+}
