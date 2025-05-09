@@ -21,28 +21,11 @@ readiness_check_path: "/health/ready"
 liveness_check_path: "/health/live"
 router_config_path: "/app/config.json"
 
-headers:
-  all:
-    request:
-      - op: "propagate"
-        named: "apikey"
-
-cors:
-  allow_methods:
-    - "POST"
-    - "OPTIONS"
-  allow_origins:
-    - "*"
-  allow_headers:
-    - "apikey"
-    - "X-WG-TRACE"
-  allow_credentials: false
-
 mcp:
   enabled: true
   server:
     listen_addr: "0.0.0.0:5025"
-  router_url: "https://cosmo-router.up.railway.app/graphql"
+  router_url: "https://cosmo-router-l8e5.onrender.com/graphql"
   storage:
     provider_id: "mcp" 
   graph_name: "daas"
